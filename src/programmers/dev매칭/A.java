@@ -1,4 +1,4 @@
-package programmers.devㅁㅐ칭;
+package programmers.dev매칭;
 
 import java.util.Arrays;
 import java.util.HashSet;

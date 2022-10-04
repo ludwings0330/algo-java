@@ -1,4 +1,4 @@
-package programmers.devㅁㅐ칭;
+package programmers.dev매칭;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -43,7 +43,8 @@ public class B {
                     continue;
 
                 Country country = dfs(r, c);
-                countryCnt.put(country.name, countryCnt.getOrDefault(country.name, 0) + country.count);
+                countryCnt.put(country.name,
+                        countryCnt.getOrDefault(country.name, 0) + country.count);
             }
         }
         PriorityQueue<Country> pq = new PriorityQueue<>();
