@@ -1,0 +1,13 @@
+
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ú™ç¯øÿÿÿÿ
+g
+java:S3008	"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô« Ãúÿÿÿÿ
+g
+java:S3008	"LRename this field "K" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô« Ãúÿÿÿÿ
+:
+java:S1659	"Declare "K" on a separate line.(Ô« Ãúÿÿÿÿ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(¾¡Ò¼
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(¬§¢çþÿÿÿÿ
+Q
+java:S1854L"6Remove this useless assignment to local variable "nm".(‹Âèæøÿÿÿÿ
+Q	java:S125H"<This block of commented-out lines of code should be removed.(Û«™‡
