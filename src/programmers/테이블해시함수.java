@@ -24,6 +24,7 @@ public class 테이블해시함수 {
                     data[i - 1]) {
                 sum += n % i;
             }
+            int tmp = 1;
             answer ^= sum;
         }
 
