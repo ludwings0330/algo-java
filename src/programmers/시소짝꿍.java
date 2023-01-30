@@ -1,43 +1,48 @@
 package programmers;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class 시소짝꿍 {
 
     public static void main(String[] args) {
-        System.out.println(solution(new int[] { 100, 180, 360, 100, 270 }));
+        System.out.println(solution(new int[] { 100, 100, 100, 100 }));
     }
 
     public static long solution(int[] weights) {
         long answer = 0;
 
-        Arrays.sort(weights);
-        int[][] cache = new int[5][4001];
+        Map<Integer, Long> counter = new HashMap<>();
 
         for (int weight :
                 weights) {
-            for (int i = 2; i <= 4; i++) {
-                cache[i][weight * i] += 1;
-            }
+            counter.put(weight, counter.getOrDefault(weight, 0L) + 1);
         }
 
-        for (int weight :
-                weights) {
-            for (int i = 2; i <= 4; i++) {
-                int target = weight * i;
-                cache[i][target] = Math.max(0, cache[i][target] - 1);
-                for (int j = 2; j <= 4; j++) {
-                    if (cache[j][target] > 0) {
-                        answer += cache[j][target];
-                        for (int k = j; k <= 4; k++) {
-                            cache[k][target / j * k] = Math.max(0, cache[k][target / j * k] - 1);
+        for (var left :
+                counter.entrySet()) {
+            for (var right :
+                    counter.entrySet()) {
+                if (left.getKey() == right.getKey()) {
+                    answer += ((left.getValue()) * (right.getValue() - 1));
+                    continue;
+                }
+                boolean isPair = false;
+                for (int i = 2; i <= 4; i++) {
+                    for (int j = 2; j <= 4; j++) {
+                        if (left.getKey() * i == right.getKey() * j) {
+                            isPair = true;
                         }
                     }
+                }
+
+                if (isPair) {
+                    answer += left.getValue() * right.getValue();
                 }
             }
         }
 
-        return answer;
+        return answer / 2;
     }
 
 }
