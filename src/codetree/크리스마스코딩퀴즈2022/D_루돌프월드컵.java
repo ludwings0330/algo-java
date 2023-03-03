@@ -21,6 +21,7 @@ public class D_루돌프월드컵 {
 
     private static void solve() {
         recursiveSolve(0, 1);
+        System.out.println(Math.round(answer * 1000) / 1000.0);
         System.out.printf("%.3f", answer);
     }
 
